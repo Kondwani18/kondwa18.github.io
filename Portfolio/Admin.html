@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Admin.css">
+    <title>Administrator Panel - Kafue College of Nursing and Midwifery</title>
+</head>
+<body>
+    <header>
+        <h1>Administrator Panel</h1>
+    </header>
+
+    <div class="container">
+        <h2>Course Applications</h2>
+        
+        <label for="course_filter">Filter by Course:</label>
+        <select id="course_filter">
+            <option value="all">All Courses</option>
+            <option value="Registered Nursing">Registered Nursing</option>
+            <option value="Midwifery">Midwifery</option>
+            <!-- Add more course options as needed -->
+        </select>
+
+        <table id="application_table">
+            <tr>
+                <th>Application ID</th>
+                <th>Applicant Name</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <!-- Example data (replace with dynamic data from your database) -->
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>Registered Nursing</td>
+                <td>johndoe@example.com</td>
+                <td>
+                    <form action="accept-application.php" method="POST">
+                        <input type="hidden" name="application_id" value="1">
+                        <button type="submit">Accept</button>
+                    </form>
+                    <form action="reject-application.php" method="POST">
+                        <input type="hidden" name="application_id" value="1">
+                        <button type="submit">Reject</button>
+                    </form>
+                    <form action="view-applicant-details.php" method="POST">
+                        <input type="hidden" name="application_id" value="1">
+                        <button type="submit">View Details</button>
+                    </form>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </table>
+
+        <div class="form-container">
+            <h2>Add New Course</h2>
+            <form action="add-course.php" method="POST">
+                <label for="course_name">Course Name:</label>
+                <input type="text" name="course_name" id="course_name" required>
+                <button type="submit">Add Course</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for filtering applications based on course selection
+        const courseFilter = document.getElementById('course_filter');
+        const applicationTable = document.getElementById('application_table');
+
+        courseFilter.addEventListener('change', () => {
+            const selectedCourse = courseFilter.value;
+            const rows = applicationTable.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) { // Start from 1 to skip the table header row
+                const courseCell = rows[i].getElementsByTagName('td')[2];
+                if (selectedCourse === 'all' || courseCell.textContent === selectedCourse) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="kay.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <h1>KAY'S AUCTION</h1>
+    
+    <!-- Product Selection Dropdown -->
+    <label for="product">Select A Product:</label>
+    <select id="product" name="product">
+        <option value="laptop">Premium Laptop</option>
+        <option value="phone">Smartphone</option>
+        <option value="headset">High-End Headset</option>
+        <option value="console">Gaming Console</option>
+        
+    </select>
+    
+    <!--HERE this is where the  Product Showcased -->
+    <div class="product">
+        <img id="productImage" src="laptop.jpg" alt="Premium Laptop">
+        <h2>Premium Laptop</h2>
+        <p>Powerful laptop with high-end features.</p>
+        <p>Current Highest Bid: <span id="currentBid">$0</span></p>
+        <label for="bidAmount">Enter Your Bid Amount:</label>
+        <input type="text" id="bidAmount" name="bidAmount" placeholder="Enter your bid amount">
+        <label for="location">Select Location:</label>
+        <select id="location" name="location">
+            <option value="USD">United States ($)</option>
+            <option value="EUR">European Union (€)</option>
+            <option value="JPY">Japan (¥)</option>
+            <option value="GBP">United Kingdom (£)</option>
+            <option value="AUD">Australia (A$)</option>
+            <option value="CAD">Canada (C$)</option>
+            <option value="INR">India (₹)</option>
+            <option value="CNY">China (¥)</option>
+            <option value="CHF">Switzerland (Fr)</option>
+            <option value="SEK">Sweden (kr)</option>
+            <option value="NZD">New Zealand (NZ$)</option>
+            <option value="MXN">Mexico (Mex$)</option>
+            <option value="SGD">Singapore (S$)</option>
+            <option value="HKD">Hong Kong (HK$)</option>
+            <option value="NOK">Norway (kr)</option>
+            <option value="KRW">South Korea (₩)</option>
+            <option value="ZAR">South Africa (R)</option>
+            <option value="BRL">Brazil (R$)</option>
+            <option value="AED">United Arab Emirates (د.إ)</option>
+            <option value="ARS">Argentina ($)</option>
+            <option value="THB">Thailand (฿)</option>
+            <option value="DKK">Denmark (kr)</option>
+            <option value="SAR">Saudi Arabia (﷼)</option>
+            <option value="QAR">Qatar (﷼)</option>
+            <option value="PHP">Philippines (₱)</option>
+            <option value="RUB">Russia (₽)</option>
+            <option value="TRY">Turkey (₺)</option>
+            <option value="PLN">Poland (zł)</option>
+            <option value="MYR">Malaysia (RM)</option>
+            <option value="IDR">Indonesia (Rp)</option>
+            <option value="HUF">Hungary (Ft)</option>
+            <option value="CZK">Czech Republic (Kč)</option>
+            <option value="CLP">Chile ($)</option>
+            <option value="COP">Colombia ($)</option>
+            <option value="EGP">Egypt (E£)</option>
+            <option value="NGN">Nigeria (₦)</option>
+            <option value="VND">Vietnam (₫)</option>
+            <option value="UAH">Ukraine (₴)</option>
+            <option value="KZT">Kazakhstan (₸)</option>
+            <option value="PKR">Pakistan (₨)</option>
+            <option value="LBP">Lebanon (ل.ل)</option>
+            <option value="PEN">Peru (S/.)</option>
+            <option value="IQD">Iraq (ع.د)</option>
+            <option value="TWD">Taiwan (NT$)</option>
+            <option value="KWD">Kuwait (د.ك)</option>
+            <option value="BHD">Bahrain (د.ب)</option>
+            <option value="OMR">Oman (ر.ع.)</option>
+            <option value="JOD">Jordan (د.ا)</option>
+            <option value="CRC">Costa Rica (₡)</option>
+            <option value="HNL">Honduras (L)</option>
+            <option value="NIO">Nicaragua (C$)</option>
+            <option value="GTQ">Guatemala (Q)</option>
+            <option value="DOP">Dominican Republic (RD$)</option>
+            <option value="BZD">Belize (BZ$)</option>
+            <option value="BSD">Bahamas (B$)</option>
+            <option value="FJD">Fiji (FJ$)</option>
+            <option value="TOP">Tonga (T$)</option>
+            <option value="PGK">Papua New Guinea (K)</option>
+            <option value="BBD">Barbados (Bds$)</option>
+            <option value="XCD">Eastern Caribbean Dollar (EC$)</option>
+            <option value="KYD">Cayman Islands (CI$)</option>
+            <option value="BMD">Bermuda (BD$)</option>
+            <option value="XOF">West African CFA (CFA)</option>
+            <option value="XAF">Central African CFA (CFA)</option>
+            <option value="XPF">French Pacific Franc (F)</option>
+            <option value="DJF">Djibouti (Fdj)</option>
+            <option value="XDR">International Monetary Fund Special Drawing Rights (XDR)</option>
+            <option value="BTN">Bhutan (Nu.)</option>
+            <option value="GYD">Guyana (GY$)</option>
+            <option value="XAU">Gold Ounce (XAU)</option>
+            <option value="SZL">Eswatini (L)</option>
+            <option value="ZMW">Zambia (ZK)</option>
+            <option value="LKR">Sri Lanka (රු)</option>
+            <!-- Add more countries and symbols as needed -->
+        </select>
+
+        <p>Total Price: <span id="totalPrice">$0</span></p>
+        <!-- PayPal Smart Payment Buttons Container -->
+        <div id="paypal-button-container"></div>
+        <!-- Display payment confirmation -->
+        <div class="display-result" id="paymentConfirmation"></div>
+    </div>
+
+    <!-- we are  Loading the PayPal SDK asynchronously , is also where the paypal api is placed -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=ATIyi4I36BUEUhXmT7WvkPUFvv8ZeH5VD_i4gXkjw8Tp5u6xic880FYqYPEl0YG7FOHxfxD5RcEqLdJp&currency=USD"
+        data-sdk-integration-source="button-factory"
+    ></script>
+
+    <script>
+        // the Function is to update product information and image based on user selection
+        function updateProductInfo() {
+            const selectedProduct = document.getElementById('product').value;
+            const productImageElement = document.getElementById('productImage');
+            const productNameElement = document.querySelector('.product h2');
+            const productDescriptionElement = document.querySelector('.product p');
+
+            if (selectedProduct === 'laptop') {
+                productImageElement.src = 'laptop.jpg';
+                productNameElement.textContent = 'Premium Laptop';
+                productDescriptionElement.textContent = 'Powerful laptop with high-end features.';
+            } else if (selectedProduct === 'phone') {
+                productImageElement.src = 'smartphone.jpg';
+                productNameElement.textContent = 'Smartphone';
+                productDescriptionElement.textContent = 'Feature-packed smartphone for your needs.';
+            } else if (selectedProduct === 'headset') {
+                productImageElement.src = 'hedset.jpg';
+                productNameElement.textContent = 'High-End Headset';
+                productDescriptionElement.textContent = 'Immersive audio experience with this headset.';
+            } else if (selectedProduct === 'console') {
+                productImageElement.src = 'gamingconsole.jpg';
+                productNameElement.textContent = 'Gaming Console';
+                productDescriptionElement.textContent = 'Next-generation gaming console for ultimate gaming.';
+            }
+        
+        }
+
+        // Function to calculate and display the current highest bid to prompt the user to place a bid
+        function calculateCurrentBid() {
+            // You can implement logic here to fetch the current highest bid for the product
+            // For this example, we'll set it to a random value between $100 and $1000.
+            const currentBid = (Math.floor(Math.random() * 901) + 100); // Generates a random value between 100 and 1000
+            const currentBidElement = document.getElementById('currentBid');
+            currentBidElement.textContent = `$${currentBid}`;
+        }
+
+        // This Function  is to calculate and display the total price with currency symbol based on the api that i used 
+        function calculateTotal() {
+            calculateCurrentBid();
+            const bidAmountInUSD = parseFloat(document.getElementById('bidAmount').value || 0);
+
+            // this block of code Fetches  the currency conversion rate using ExchangeRate API
+            const selectedLocation = document.getElementById('location').value;
+            fetch(`https://api.exchangerate.host/latest?source=ecb&base=USD`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.rates && data.rates[selectedLocation]) {
+                        const currencyRate = data.rates[selectedLocation];
+                        const totalPrice = (bidAmountInUSD * currencyRate).toFixed(2);
+
+                        // here it Fetches the  currency symbol based on the selected location
+                        const currencySymbols = {
+                            USD: '$',
+                            EUR: '€',
+                            JPY: '¥',
+                            GBP: '£',
+                            AUD: 'A$',
+                            CAD: 'C$',
+                            INR: '₹',
+                            CNY: '¥',
+                            CHF: 'Fr',
+                            SEK: 'kr',
+                            NZD: 'NZ$',
+                            MXN: 'Mex$',
+                            SGD: 'S$',
+                            HKD: 'HK$',
+                            NOK: 'kr',
+                            KRW: '₩',
+                            ZAR: 'R',
+                            BRL: 'R$',
+                            AED: 'د.إ',
+                            ARS: '$',
+                            THB: '฿',
+                            DKK: 'kr',
+                            SAR: '﷼',
+                            QAR: '﷼',
+                            PHP: '₱',
+                            RUB: '₽',
+                            TRY: '₺',
+                            PLN: 'zł',
+                            MYR: 'RM',
+                            IDR: 'Rp',
+                            HUF: 'Ft',
+                            CZK: 'Kč',
+                            CLP: '$',
+                            COP: '$',
+                            EGP: 'E£',
+                            NGN: '₦',
+                            VND: '₫',
+                            UAH: '₴',
+                            KZT: '₸',
+                            PKR: '₨',
+                            LBP: 'ل.ل',
+                            PEN: 'S/.',
+                            IQD: 'ع.د',
+                            TWD: 'NT$',
+                            KWD: 'د.ك',
+                            BHD: 'د.ب',
+                            OMR: 'ر.ع.',
+                            JOD: 'د.ا',
+                            CRC: '₡',
+                            HNL: 'L',
+                            NIO: 'C$',
+                            GTQ: 'Q',
+                            DOP: 'RD$',
+                            BZD: 'BZ$',
+                            BSD: 'B$',
+                            FJD: 'FJ$',
+                            TOP: 'T$',
+                            PGK: 'K',
+                            BBD: 'Bds$',
+                            XCD: 'EC$',
+                            KYD: 'CI$',
+                            BMD: 'BD$',
+                            XOF: 'CFA',
+                            XAF: 'CFA',
+                            XPF: 'F',
+                            DJF: 'Fdj',
+                            XDR: 'XDR',
+                            BTN: 'Nu.',
+                            GYD: 'GY$',
+                            XAU: 'XAU',
+                            SZL: 'L',
+                            ZMW: 'ZK',
+                            LKR: 'රු',
+                    
+                            // Add more currencies and symbols as needed
+                        };
+
+                        const currencySymbol = currencySymbols[selectedLocation];
+
+                        // it Updates the total price on the page
+                        const totalPriceElement = document.getElementById('totalPrice');
+                        totalPriceElement.textContent = `${currencySymbol}${totalPrice}`;
+                    } else {
+                        console.error(`Currency code '${selectedLocation}' is not valid.`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching conversion data:', error);
+                });
+        }
+
+        // Handle product selection change
+        document.getElementById('product').addEventListener('change', updateProductInfo);
+
+        //here it  Calculates and displays the total price initially and whenever the location or bid amount changes
+        calculateTotal();
+
+        // this is where i Added  event listeners to recalculate total price when location or bid amount changes
+        document.getElementById('location').addEventListener('change', calculateTotal);
+        document.getElementById('bidAmount').addEventListener('input', calculateTotal);
+
+        // Add PayPal Smart Payment Buttons
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            currency_code: document.getElementById('location').value,
+                            value: document.getElementById('totalPrice').textContent // Get the total amount dynamically
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    const confirmationElement = document.getElementById('paymentConfirmation');
+                    confirmationElement.textContent = 'Payment completed. Thank you, ' + details.payer.name.given_name + '!';
+                    // You can redirect the user or perform other actions here
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>

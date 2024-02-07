@@ -1,0 +1,130 @@
+/* Apply.css */
+
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Underline headings except those with class "no-underline" */
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: underline;
+}
+
+h1.no-underline, h2.no-underline, h3.no-underline, h4.no-underline, h5.no-underline, h6.no-underline {
+    text-decoration: none; /* Remove underline for specific headings */
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    grid-gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the form sections (e.g., gender, marital status) */
+section {
+    margin-bottom: 1rem;
+}
+
+/* Style the form file inputs */
+input[type="file"] {
+    display: none;
+}
+
+label[for="NRC"], label[for="grade_results"], label[for="Bank-reciept"], label[for="church"] {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style the form file input labels on hover */
+label[for="NRC"]:hover, label[for="grade_results"]:hover, label[for="Bank-reciept"]:hover, label[for="church"]:hover {
+    background-color: #555;
+}
+
+/* Display the courses info section when courses are taken */
+#courses_info {
+    display: none;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+}

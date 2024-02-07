@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Nursing Program - School of Nursing - XYZ College</title>
+    <link rel="stylesheet" href="Apply.css"> <!-- You can link to a custom CSS file for styling the form -->
+    <style>
+        /* Add CSS styles for spacing here */
+        section {
+            margin-bottom: 20px;
+        }
+
+        label,
+        input,
+        select,
+        textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="no-underline">Apply for A Nursing Program</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="login.html" class="login-button">Log In</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="no-underline" style="text-align: center;">Application Form</h2><br>
+        <p>Fill out the form below to apply for a nursing program at Kafue College Of Nursing & MidWifery.</p><br>
+
+        <form action="submit-application.php" method="POST" enctype="multipart/form-data">
+                <section>
+                    <h3>Personal Information</h3><br>
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required><br>
+                
+                    <label for="second_name">Second Name:</label>
+                    <input type="text" id="second_name" name="second_name" required><br>
+                
+                    <label for="third_name">Third Name:</label>
+                    <input type="text" id="third_name" name="third_name"><br>
+                
+                    <label for="gender">Gender:</label><br>
+                    <input type="checkbox" id="male" name="gender" value="Male">
+                    <label for="male">Male</label><br>
+                    <input type="checkbox" id="female" name="gender" value="Female">
+                    <label for="female">Female</label><br>
+                    <input type="checkbox" id="other" name="gender" value="Other">
+                    <label for="other">Other</label><br>
+                
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth" required>
+                </section>
+                
+                
+            <section>
+                <h3>Contact Information</h3><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br>
+
+                <label for="city">City:</label><br>
+                <select id="city" name="city" required>
+                    <option value="Lusaka">Lusaka</option>
+                    <option value="Ndola">Ndola</option>
+                    <option value="Kitwe">Kitwe</option>
+                    <option value="Kabwe">Kabwe</option>
+                    <option value="Livingstone">Livingstone</option>
+                    <option value="Mufulira">Mufulira</option>
+                    <!-- Add more Zambian cities as needed -->
+                </select><br>
+
+                <label for="state">State/Province:</label><br>
+                <select id="state" name="state" required>
+                    <option value="Lusaka Province">Lusaka Province</option>
+                    <option value="Copperbelt Province">Copperbelt Province</option>
+                    <option value="Southern Province">Southern Province</option>
+                    <option value="Northern Province"> Northern Province</option>
+                    <option value="Western Province"> Western Province</option>
+                    <option value="Eastern Province"> Eastern Province</option>
+                    <option value="Luwapula Province"> Luwapula Province</option>
+                    <option value="Mchinga Province"> Mchinga Province</option>
+                    <option value=" Central Province"> Central Province</option>
+                    <option value="NorthWestern Province"> NorthWestern Province</option>
+                    <!-- Add more Zambian provinces as needed -->
+                </select><br>
+
+                <label for="zip_code">Postal Address:</label>
+                <input type="text" id="zip_code" name="zip_code" required><br>
+
+                <label for="Religion">Religion:</label>
+                <input type="text" id="Religion" name="Religion" required>
+            </section>
+
+            <section>
+                <h3>Additional Information</h3><br>
+                <label for="parent_name"> Gaurdian/Parent's Full Name:</label>
+                <input type="text" id="parent_name" name="parent_name" required><br>
+
+                <label for="marital_status">Marital Status:</label><br>
+                <input type="checkbox" id="single" name="marital_status" value="Single">
+                <label for="single">Single</label><br>
+                <input type="checkbox" id="married" name="marital_status" value="Married">
+                <label for="married">Married</label><br>
+                <!-- Add more marital status options here -->
+
+                <label for="accommodation">Accommodation Needed:</label><br>
+                <input type="checkbox" id="accommodation_yes" name="accommodation" value="Yes">
+                <label for="accommodation_yes">Yes</label><br>
+                <input type="checkbox" id="accommodation_no" name="accommodation" value="No">
+                <label for="accommodation_no">No</label><br>
+
+                <label for="additional_info">Additional Information:</label>
+                <textarea id="additional_info" name="additional_info" rows="4"></textarea><br>
+            </section>
+
+            <section>
+                <h3>Educational Documents</h3><br>
+                <label for="nrc">National Registration Card (NRC):</label>
+                <input type="text" id="nrc" name="nrc" required><br>
+
+                <!--<label for="NRC">National Registration Card (Upload Image):</label><br>
+                <input type="file" id="NRC" name="NRC" accept="image/*" required><br>
+
+                <label for="grade_results">Grade Twelve Results (Upload Image):</label><br>
+                <input type="file" id="grade_results" name="grade_results" accept="image/*" required><br>
+
+                <label for="Bank-receipt">Bank receipt (Upload Image):</label><br>
+                <input type="file" id="Bank-receipt" name="Bank-receipt" accept="image/*" required><br>
+
+                <label for="church">Church Recommendation (Upload Image):</label><br>
+                <input type="file" id="church" name="church" accept="image/*" required><br>
+
+                  Add more educational document fields as needed  -->
+            </section>
+
+            <section>
+                <h3>Course Information</h3><br>
+                 
+                <label for="course">What course do you Want to do ?</label><br>
+                <select id="course" name="course" required>
+                    <option value="Midwifery">MidWifery</option>
+                    <option value="-nurRegisteredsing">Registered Nursing</option>
+                    <option value="Theatre_Nursing"> Theatre Nursing</option>
+                    <option value="Physical-Education"> Physical Education</option>
+                    <option value="Critical-care">Critical Care</option>
+                    <option value="Public-Health">Public Health</option>
+                    <!-- Add more courses if needed-->
+                </select><br>
+
+                <p>Have you taken any courses before?</p><br>
+                <label for="courses_taken_yes">Yes</label>
+                <input type="radio" id="courses_taken_yes" name="courses_taken" value="yes">
+                <label for="courses_taken_no">No</label>
+                <input type="radio" id="courses_taken_no" name="courses_taken" value="no" checked><br>
+
+                <div id="courses_info" style="display: none;">
+                    <label for="previous_course">Course Name:</label>
+                    <input type="text" id="previous_course" name="previous_course"><br>
+
+                    <label for="previous_course_date">When:</label>
+                    <input type="text" id="previous_course_date" name="previous_course_date"><br>
+                </div>
+
+                <label for="additional_information">Why Do You Want To Do This Course ?</label><br>
+                <textarea id="additional_information" name="additional_information" rows="4"></textarea><br>
+
+                <label for="benefit_society">What Will This Course Benefit You in Society? </label><br>
+                <textarea id="benefit_society" name="benefit_society" rows="4"></textarea>
+            </section>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </main>
+
+    
+    <script>
+        // Show/hide additional course information based on radio button selection
+        const coursesTakenRadio = document.querySelectorAll('input[name="courses_taken"]');
+        const coursesInfo = document.getElementById('courses_info');
+
+        coursesTakenRadio.forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'yes') {
+                    coursesInfo.style.display = 'block';
+                } else {
+                    coursesInfo.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2023 School of Nursing & MidWifery - Kafue College</p>
+    </footer>
+</body>
+</html>

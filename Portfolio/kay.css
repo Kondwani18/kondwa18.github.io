@@ -1,0 +1,112 @@
+/* Update the body background and font styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header with a gradient background and centered text */
+h1 {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to bottom, #2196F3, #1470c5);
+    padding: 20px;
+    margin: 0;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Update label styles for better readability */
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style input and select elements with subtle borders and shadows */
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select option {
+    font-size: 16px;
+}
+
+/* Update the "Select Product" dropdown style for smaller screens */
+@media (max-width: 768px) {
+    #product {
+        font-size: 16px;
+    }
+}
+
+/* Style the product image with a border and shadow */
+#productImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 3px solid #2196F3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Update product title and description styles */
+.product h2 {
+    font-size: 32px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.product p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Update label styles for bid amount and location */
+label[for="bidAmount"],
+label[for="location"] {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Style the price with a green color and larger font size */
+.product p span {
+    font-weight: bold;
+    font-size: 28px;
+    color: #4CAF50;
+}
+
+/* Center align PayPal button container */
+#paypal-button-container {
+    text-align: center;
+}
+
+/* Style the payment confirmation message with a green color */
+.display-result {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Additional media query for smaller screens */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens here */
+}

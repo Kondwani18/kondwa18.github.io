@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kafue College of Nursing and Midwifery</title>
+    <link rel="stylesheet" type="text/css" href="login.css"> <!-- You can link to a custom CSS file for styling -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <form action="login.php" method="POST">
+            <label for="role">Login As:</label>
+            <select id="role" name="role" required>
+                <option value="student">Student</option>
+                <option value="admin">Administrator</option>
+            </select>
+
+            <!-- For Admins -->
+            <label for="admin_id" id="admin-id-label" style="display: none;">Admin ID:</label>
+            <input type="text" id="admin_id" name="admin_id" style="display: none;">
+
+            <!-- For Students -->
+            <label for="student_id" id="student-id-label">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <button class="signup-button" onclick="window.location.href='signUp.html'">Sign Up</button>
+
+        <script>
+            // Toggle visibility of admin/student fields based on role selection
+            const roleSelect = document.getElementById('role');
+            const adminIdLabel = document.getElementById('admin-id-label');
+            const adminIdInput = document.getElementById('admin_id');
+            const studentIdLabel = document.getElementById('student-id-label');
+            const studentIdInput = document.getElementById('student_id');
+
+            roleSelect.addEventListener('change', () => {
+                if (roleSelect.value === 'admin') {
+                    adminIdLabel.style.display = 'block';
+                    adminIdInput.style.display = 'block';
+                    studentIdLabel.style.display = 'none';
+                    studentIdInput.style.display = 'none';
+                } else {
+                    adminIdLabel.style.display = 'none';
+                    adminIdInput.style.display = 'none';
+                    studentIdLabel.style.display = 'block';
+                    studentIdInput.style.display = 'block';
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
